@@ -11,13 +11,9 @@
 
                 int numeroDoUsuario = Convert.ToInt32(Console.ReadLine());
 
+                ExibirMensagemDeErro(numeroDoUsuario);
 
-                if (numeroDoUsuario < 3 || numeroDoUsuario % 2 == 0)
-                {
-                    Console.WriteLine("Digite outro número, ímpar maior que 1");
-                   
-                }
-
+                Console.WriteLine("Digite ENTER para continuar....");
                 Console.ReadLine();
             }
 
@@ -33,5 +29,14 @@
             Console.Write("Digite um número inteiro para montar seu diamante: ");       
         }
        
+        static void ExibirMensagemDeErro(int numeroDoUsuario)
+        {
+
+            if (numeroDoUsuario < 3 || numeroDoUsuario % 2 == 0)
+            {
+                Console.WriteLine("Digite outro número, ímpar maior que 1");
+
+            }
+        }
     }
 }
