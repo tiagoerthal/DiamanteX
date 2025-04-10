@@ -6,33 +6,26 @@ namespace DiamanteX.ConsoleApp1
     {
         static void Main(string[] args)
         {
-            while (true)
-            {
-                ExibirCabecalho();
+           
+            ExibirCabecalho();
 
-                int tamanhoDiamante = Convert.ToInt32(Console.ReadLine());
+            int tamanhoDiamante = Convert.ToInt32(Console.ReadLine());
 
-                ExibirMensagemDeErro(tamanhoDiamante);
+            ExibirMensagemDeErro(tamanhoDiamante);
 
-                Console.WriteLine("Digite ENTER para continuar....");
+            Console.WriteLine("Digite ENTER para continuar....");
+              
+            int quantidadeLinhas =(tamanhoDiamante -  1) / 2;
+            int quantidadeEspaco = quantidadeLinhas;
+            int quantidadeX = 1;
 
-                int quantidadeLinhas = (tamanhoDiamante - 1) / 2;
-                int quantidadeEspaco = quantidadeLinhas;
-                int quantidadeX = 1;
+            //aqui
+            ExibirMetodo(quantidadeLinhas, quantidadeEspaco, quantidadeX, tamanhoDiamante);
 
-                //aqui
-                ExibirMetodo(quantidadeLinhas, quantidadeEspaco, quantidadeX, tamanhoDiamante);
+            Console.ReadLine();
 
-                Console.ReadLine();
-
-
-                string opcaoContinuar = ExibirMenuContinuar();
-                if (opcaoContinuar != "S")
-                    break;
-
-            }
+                                 
         }
-
 
         static void ExibirCabecalho()
         {
@@ -40,9 +33,9 @@ namespace DiamanteX.ConsoleApp1
             Console.WriteLine("---------------------------------------------");
             Console.WriteLine("Faça seu diamante!");
             Console.WriteLine("---------------------------------------------");
-            Console.Write("Digite um número inteiro para montar seu diamante: ");
+            Console.Write("Digite um número inteiro para montar seu diamante: ");       
         }
-
+       
         static void ExibirMensagemDeErro(int tamanhoDiamante)
         {
 
@@ -53,7 +46,7 @@ namespace DiamanteX.ConsoleApp1
             }
         }
 
-        static void ExibirMetodo(int quantidadeLinhas, int quantidadeEspaco, int quantidadeX, int tamanhoDiamante)
+        static void ExibirMetodo(int quantidadeLinhas, int quantidadeEspaco,int quantidadeX, int tamanhoDiamante)
         {
             // parte de cima
             for (int i = 0; i < quantidadeLinhas; i++)
@@ -70,15 +63,15 @@ namespace DiamanteX.ConsoleApp1
                 Console.WriteLine();
             }
 
-            #region parte do meio
+            //parte do meio
             for (int i = 0; i < tamanhoDiamante; i++)
                 Console.Write("X");
 
             Console.WriteLine();
-            #endregion
 
 
-            #region parte de baixo
+
+            // parte de baixo
             for (int i = 0; i < quantidadeLinhas; i++)
             {
                 quantidadeX -= 2;
@@ -90,18 +83,10 @@ namespace DiamanteX.ConsoleApp1
                 for (int x = 0; x < quantidadeX; x++)
                     Console.Write("X");
 
+
+
                 Console.WriteLine();
             }
         }
-        #endregion
-        static string ExibirMenuContinuar()
-        {
-            Console.WriteLine("----------------------------------------");
-            Console.Write("Deseja continuar? (S/N): ");
-            string opcaoContinuar = Console.ReadLine()!.ToUpper();
-
-            return opcaoContinuar;
-        }
     }
-    
 }
