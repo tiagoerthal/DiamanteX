@@ -19,45 +19,8 @@ namespace DiamanteX.ConsoleApp1
             int quantidadeEspaco = quantidadeLinhas;
             int quantidadeX = 1;
 
-            // parte de cima
-            for (int i = 0; i < quantidadeLinhas; i++)
-            {
-                for (int espaco = 0; espaco < quantidadeEspaco; espaco++)
-                    Console.Write(" ");
-
-                for(int x = 0; x < quantidadeX; x++)
-                    Console.Write("X");
-
-                quantidadeX += 2;
-                quantidadeEspaco--;
-                
-                Console.WriteLine();
-            }
-
-            //parte do meio
-            for (int i = 0; i < tamanhoDiamante; i++)
-             Console.Write("X");
-
-                Console.WriteLine();
-
-
-
-            // parte de baixo
-            for (int i = 0; i < quantidadeLinhas; i++)
-            {
-                quantidadeX -= 2;
-                quantidadeEspaco++;
-
-                for (int espacos = 0; espacos < quantidadeEspaco; espacos++)
-                    Console.Write(" ");
-
-                for (int x = 0; x < quantidadeX; x++)
-                    Console.Write("X");
-
-               
-               
-                Console.WriteLine();
-            }
+            //aqui
+            ExibirMetodo(quantidadeLinhas, quantidadeEspaco, quantidadeX, tamanhoDiamante);
 
             Console.ReadLine();
 
@@ -80,6 +43,49 @@ namespace DiamanteX.ConsoleApp1
             {
                 Console.WriteLine("Digite outro número, ímpar maior que 1");
 
+            }
+        }
+
+        static void ExibirMetodo(int quantidadeLinhas, int quantidadeEspaco,int quantidadeX, int tamanhoDiamante)
+        {
+            // parte de cima
+            for (int i = 0; i < quantidadeLinhas; i++)
+            {
+                for (int espaco = 0; espaco < quantidadeEspaco; espaco++)
+                    Console.Write(" ");
+
+                for (int x = 0; x < quantidadeX; x++)
+                    Console.Write("X");
+
+                quantidadeX += 2;
+                quantidadeEspaco--;
+
+                Console.WriteLine();
+            }
+
+            //parte do meio
+            for (int i = 0; i < tamanhoDiamante; i++)
+                Console.Write("X");
+
+            Console.WriteLine();
+
+
+
+            // parte de baixo
+            for (int i = 0; i < quantidadeLinhas; i++)
+            {
+                quantidadeX -= 2;
+                quantidadeEspaco++;
+
+                for (int espacos = 0; espacos < quantidadeEspaco; espacos++)
+                    Console.Write(" ");
+
+                for (int x = 0; x < quantidadeX; x++)
+                    Console.Write("X");
+
+
+
+                Console.WriteLine();
             }
         }
     }
